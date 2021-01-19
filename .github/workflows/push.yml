@@ -46,3 +46,9 @@ jobs:
           --build-arg GITHUB_REF="$GITHUB_REF" \
           .
 
+    - name: Publish
+      run: |-
+        docker push "gcr.io/$PROJECT_ID/$IMAGE:$GITHUB_SHA"
+
+
+
